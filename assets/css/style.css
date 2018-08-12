@@ -1,0 +1,17 @@
+.backgroundImage{
+    background-image: url(../images/rocknRollPic.jpg);
+}
+
+.headbox{
+    background-color: grey;
+}
+
+.mainContent{
+    background-color: grey;
+    /*height: 70vh;*/
+    height:20vh;
+}
+.questionContent{
+    background-color:lightslategray;
+    height:50vh;
+}
