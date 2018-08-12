@@ -6,9 +6,9 @@ $(document).ready(function () {
     var question3;
     var question4;
     var question5;
-    var correct;
-    var incorrect;
-    var unanswered;
+    var correct = 0;
+    var incorrect = 0;
+    var unanswered = 0;
     $(".formBox").hide();
 
 
@@ -31,18 +31,20 @@ $(document).ready(function () {
             //  Show the number in the #show-number tag.
             $("#counterBox").html("<h2>" + timerBox + "</h2>");
 
-
             //  Once number hits zero...
             if (timerBox === 0) {
                 $("#counterBox").hide();
-                $("#scoreCard").html("<div>This is the finish</div>")
+                $("#scoreCard").html("<div>Correct" + " " + correct + "</div>" +
+                    "<div>Incorrect" + " " + incorrect + "</div>" +
+                    "<div>Unanswered" + " " + unanswered + "</div>");
 
-                //  ...run the stop function.
-                /* stop();
- 
-                 //  Alert the user that time is up.
-                 alert("Time Up!");*/
             }
+
+
+            var userCorrect = ".rightAnswer";
+            $(".rightAnswer").on("click", function () {
+                console.log(correct++);
+            })
         }
         run();
 
