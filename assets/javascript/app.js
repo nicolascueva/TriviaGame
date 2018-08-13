@@ -1,6 +1,6 @@
 $(document).ready(function () {
     var startBox;
-    var timerBox = 25;
+    var timerBox = 60;
     var question1;
     var question2;
     var question3;
@@ -14,8 +14,7 @@ $(document).ready(function () {
 
     $("#startButton").on("click", function () {
 
-        //$("#counterBox").html("<div>Countdown Box</div>");
-        // $("#questionBox").append("<p>question 1</p> <p>question 2</p>");
+
         $(".formBox").show();
 
         function run() {
@@ -28,7 +27,7 @@ $(document).ready(function () {
             //  Decrease number by one.
             timerBox--;
 
-            //  Show the number in the #show-number tag.
+            //  Show the number countdown
             $("#counterBox").html("<h2>" + timerBox + "</h2>");
 
             //  Once number hits zero...
@@ -37,37 +36,31 @@ $(document).ready(function () {
                 $("#scoreCard").html("<div>Correct" + " " + correct + "</div>" +
                     "<div>Incorrect" + " " + incorrect + "</div>" +
                     "<div>Unanswered" + " " + unanswered + "</div>");
+                $("#scoreCard").prepend("<div>Game Over!</div>" + "<br>");
 
             }
+            /////Supposed to add correct and incorrect. For some reason it won't add them by 1. Adds like 3-6 each time an answer is selected
+            ////Haven't found a solution for this code or a good replacement such as an array with objects that correctly stores the user answers
+            $('input[name="test"]').on('click', function () {
+                var right = $(this);
+                if (right.val() == 'ans') {
+                    console.log(correct++);
+                }
 
+            });
+            $('input[name="test"]').on('click', function () {
+                var nope = $(this);
+                if (nope.val() == 'inc') {
+                    console.log(incorrect++);
+                }
 
-            var userCorrect = ".rightAnswer";
-            $(".rightAnswer").on("click", function () {
-                console.log(correct++);
-            })
-        }
+            });
+
+        };
+
         run();
 
-
-
-
-
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

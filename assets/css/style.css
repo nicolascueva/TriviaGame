@@ -4,14 +4,16 @@
 
 .headbox{
     background-color: grey;
+    opacity: 0.98;
 }
 
 .mainContent{
     background-color: grey;
-    /*height: 70vh;*/
-    height:20vh;
+    opacity: 0.98;
+    
 }
 .questionContent{
     background-color:lightslategray;
-    height:50vh;
+    opacity: 0.98;
+    height:70vh;
 }
